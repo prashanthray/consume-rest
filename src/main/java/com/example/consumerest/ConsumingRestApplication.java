@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.consumerest.domain.Employee;
+import com.example.consumerest.model.Employee;
 
 @SpringBootApplication
 public class ConsumingRestApplication {
@@ -22,23 +22,23 @@ public class ConsumingRestApplication {
 		SpringApplication.run(ConsumingRestApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
+//	@Bean
+//	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+//		return builder.build();
+//	}
 
-	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-		return args -> {
-			ResponseEntity<Employee[]> response =
-					  restTemplate.getForEntity(
-					  "http://localhost:8080/list",
-					  Employee[].class);
-					Employee[] employees = response.getBody();
-					for(Employee emp : employees) {
-						log.info(emp.toString());
-					}
-		};
-	}
+//	@Bean
+//	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+//		return args -> {
+//			ResponseEntity<Employee[]> response =
+//					  restTemplate.getForEntity(
+//					  "http://localhost:8080/list",
+//					  Employee[].class);
+//					Employee[] employees = response.getBody();
+//					for(Employee emp : employees) {
+//						log.info(emp.toString());
+//					}
+//		};
+//	}
 
 }

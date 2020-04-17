@@ -1,4 +1,4 @@
-package com.example.consumerest.domain;
+package com.example.consumerest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -38,3 +38,4 @@ public class Employee {
 		return "Employee{" + "name=" + employeeName + ", role=" + employeeRole + "}";
 	}
 }
+
