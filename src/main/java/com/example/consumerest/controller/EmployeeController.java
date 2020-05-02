@@ -1,5 +1,7 @@
 package com.example.consumerest.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +17,7 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@RequestMapping(value = "employees",method = RequestMethod.GET)   // or use @GetMapping
-    public java.util.List<Employee> listEmployee() {
+    public List<Employee> listEmployee() {
         return employeeService.getAllEmployees();
     }
 
