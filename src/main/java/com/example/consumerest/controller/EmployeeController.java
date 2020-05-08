@@ -17,7 +17,7 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@RequestMapping(value = "employees",method = RequestMethod.GET)   // or use @GetMapping
-    public List<Employee> listEmployee() {
+    public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 

@@ -24,20 +24,29 @@ public class EmployeeService {
 		return builder.build();
 	}
 	
+//	public List<Employee> getAllEmployees() {
+//		RestTemplate restTemplate = new RestTemplate();
+//		List<Employee> employeeList = new ArrayList<Employee>();
+//		ResponseEntity<Employee[]> response = restTemplate.getForEntity("http://localhost:8080/list", Employee[].class);
+//		Employee[] employees = response.getBody();
+//		employeeList = Arrays.asList(employees);
+//		for (Employee emp : employees) {
+//			log.info(emp.toString());
+//		}
+//		return employeeList;
+//
+//	}
+	
 	public List<Employee> getAllEmployees() {
 		RestTemplate restTemplate = new RestTemplate();
 		List<Employee> employeeList = new ArrayList<Employee>();
-		ResponseEntity<Employee[]> response =
-				  restTemplate.getForEntity(
-				  "http://localhost:8080/list",
-				  Employee[].class);
-				Employee[] employees = response.getBody();
-				employeeList = Arrays.asList(employees);
-				for(Employee emp : employees) {
-					log.info(emp.toString());
-				}
+		Employee[] employees = restTemplate.getForObject("http://localhost:8080/list", Employee[].class);
+		employeeList = Arrays.asList(employees);
+		for (Employee emp : employees) {
+			log.info(emp.toString());
+		}
 		return employeeList;
-		
+
 	}
 
 }
