@@ -1,12 +1,18 @@
 package com.example.consumerest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Employee {
 
+	@JsonProperty("id")
 	private String employeeId;
+	
+	@JsonProperty("empName")
 	private String employeeName;
+	
+	@JsonProperty("position")
 	private String employeeRole;
 
 	public String getEmployeeId() {
